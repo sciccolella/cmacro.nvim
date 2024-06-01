@@ -66,7 +66,7 @@ end
 
 function M.cmacro_comment_toggle_single_line()
 	local current_line = vim.api.nvim_get_current_line()
-	local new_line = M.toggle_comment(current_line)
+	local new_line = toggle_comment(current_line)
 	local row, _ = unpack(vim.api.nvim_win_get_cursor(0))
 	vim.api.nvim_buf_set_lines(0, row - 1, row, true, { new_line })
 end
