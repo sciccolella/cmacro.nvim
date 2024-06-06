@@ -16,8 +16,8 @@ end
 
 local function toggle_linebreak(current_line)
   local new_line = ""
-  if current_line:match("\\") then
-    new_line = string.gsub(current_line, "\\", "")
+  if current_line:match("\\%s*$") then
+    new_line = string.gsub(current_line, "\\%s*$", "")
     new_line = string.gsub(new_line, "^(%s*.-)%s*$", "%1")
   else
     new_line = current_line .. " \\"
